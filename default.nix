@@ -22,6 +22,7 @@ let
     #
     defaultVersions = {
         pkgs = pinnedNix;
+        lib = pinnedNix.lib;
         fetchFromGitHub = pinnedNix.fetchFromGitHub;
         rustPlatform = pinnedNix.rustPlatform;
     };
@@ -29,8 +30,8 @@ let
 in
     # this is exporting a funciton, the arguments are things that importers can override if needed
     {
-        lib,
         pkgs            ? defaultVersions.pkgs,
+        lib             ? defaultVersions.lib,
         fetchFromGitHub ? defaultVersions.fetchFromGitHub,
         rustPlatform    ? defaultVersions.rustPlatform,
         ...
