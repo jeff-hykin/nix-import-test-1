@@ -3,7 +3,7 @@ let
     pinnedNix = (builtins.import 
         (builtins.fetchTarball
             ({
-                url=''https://github.com/NixOS/nixpkgs/archive/${pinnedNixVersion}.tar.gz'';
+                url=''https://github.com/NixOS/nixpkgs/archive/8917ffe7232e1e9db23ec9405248fd1944d0b36f.tar.gz'';
             })
         )
         ({
@@ -20,7 +20,7 @@ in
         let
             output = rec {
                 howdy = true;
-                pkgs = pkgs;
+                packages = pkgs;
             };
         in 
             output
