@@ -1,7 +1,7 @@
 # testing
 ```nix
 package = (builtins.import
-    (fetchTarball "https://github.com/jeff-hykin/nix-import-test-1/archive/ef00b445a1b25791fb803ce75ae2e6d13f93f996.tar.gz")
+    (fetchTarball "https://github.com/jeff-hykin/nix-import-test-1/archive/8aa36fbd6512d13897721d53ff5353999e6a1e4a.tar.gz")
     {}
 )
 ```
