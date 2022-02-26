@@ -10,7 +10,9 @@
         })
     )
 }:
-    (pkgs.callPackage
-        (./nixGL.nix)
-        ({})
-    )
+    let
+        output = rec {
+            howdy = true;
+        };
+    in 
+        output
