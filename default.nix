@@ -20,6 +20,7 @@ in
         let
             output = rec {
                 howdy = true;
+                pkgs = pkgs;
             };
         in 
             output
