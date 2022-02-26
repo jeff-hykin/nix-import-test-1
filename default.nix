@@ -1,10 +1,9 @@
-{
-    # Make sure to enable config.allowUnfree to the instance of nixpkgs to be
-    # able to access the nvidia drivers.
-    pkgs ? (builtins.import 
+let 
+    pinnedNixVersion = "8917ffe7232e1e9db23ec9405248fd1944d0b36f"; # this is a hash of a specific commit
+    pinnedNix = (builtins.import 
         (builtins.fetchTarball
             ({
-                url="https://github.com/NixOS/nixpkgs/archive/8917ffe7232e1e9db23ec9405248fd1944d0b36f.tar.gz";
+                url=''https://github.com/NixOS/nixpkgs/archive/${pinnedNixVersion}.tar.gz'';
             })
         )
         ({
@@ -12,11 +11,15 @@
                 allowUnfree = true;
             };
         })
-    )
-}:
-    let
-        output = rec {
-            howdy = true;
-        };
-    in 
-        output
+    );
+in
+    # exports a funciton, the arguments are things that importers can override if needed
+    {
+        pkgs ? pinnedNix
+    }:
+        let
+            output = rec {
+                howdy = true;
+            };
+        in 
+            output
