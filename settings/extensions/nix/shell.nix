@@ -22,7 +22,7 @@ let
     );
     
     salt = (builtins.import
-        (fetchTarball "https://github.com/jeff-hykin/nix-import-test-1/archive/a894e3efbee859384bd2826cd78e51176e98c84d.tar.gz")
+        (fetchTarball "https://github.com/jeff-hykin/nix-import-test-1/archive/0e22da25ed86fa1c724b267567c582f53dd4dcc6.tar.gz")
         {}
     );
     

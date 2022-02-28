@@ -57,7 +57,7 @@ in
                     sha256 = "1d17lxz8kfmzybbpkz1797qkq1h4jwkbgwh2yrwrymraql8rfy42";
                 };
 
-                cargoSha256 = "03h9pn3a5jijv7jwy7vdfzan2a2dl8flam79bj98mknx3bz1498z";
+                cargoSha256 = "1mk5myqzb5d8siknaq947ylyiixnnzm02rhqzsyqd4l4z9x3qx2p";
 
                 meta = {
                     description = "Fast and simple task management from the CLI.";
