@@ -30,8 +30,8 @@ let
     # 
     # Load data from Cargo.toml
     # 
-    packageInfo = (main.fromTOML
-        (main.readFile
+    packageInfo = (pinnedNix.fromTOML
+        (pinnedNix.readFile
             ./Cargo.toml
         )
     );
