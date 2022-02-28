@@ -52,11 +52,7 @@ in
 
                 src = fetchFromGitHub {
                     owner = "Milo123459";
-                    repo = (main.fromTOML
-                        (main.readFile
-                            ./Cargo.toml
-                        )
-                    );
+                    repo = "https://github.com/Milo123459/salt.git";
                     rev = "v0.2.3";
                     sha256 = "1d17lxz8kfmzybbpkz1797qkq1h4jwkbgwh2yrwrymraql8rfy42";
                 };
