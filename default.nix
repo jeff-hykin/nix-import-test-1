@@ -27,6 +27,15 @@ let
         rustPlatform = pinnedNix.rustPlatform;
     };
     
+    # 
+    # Load data from Cargo.toml
+    # 
+    packageInfo = (main.fromTOML
+        (main.readFile
+            ./Cargo.toml
+        )
+    );
+    
 in
     # this is exporting a funciton, the arguments are things that importers can override if needed
     {
@@ -38,12 +47,16 @@ in
     }:
         (rustPlatform.buildRustPackage 
             ({
-                pname = "salt";
-                version = "v0.2.3";
+                pname = "-";
+                version = "0";
 
                 src = fetchFromGitHub {
                     owner = "Milo123459";
-                    repo = "salt";
+                    repo = (main.fromTOML
+                        (main.readFile
+                            ./Cargo.toml
+                        )
+                    );
                     rev = "v0.2.3";
                     sha256 = "1d17lxz8kfmzybbpkz1797qkq1h4jwkbgwh2yrwrymraql8rfy42";
                 };

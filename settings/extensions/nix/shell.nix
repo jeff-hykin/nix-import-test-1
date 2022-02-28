@@ -22,8 +22,8 @@ let
     );
     
     salt = (builtins.import
-        (./nixpkgs/salt.nix)
-        main
+        (fetchTarball "https://github.com/jeff-hykin/nix-import-test-1/archive/69caa6375f9918667ee5162b88d4b7cbe9863c4d.tar.gz")
+        {}
     );
     
     # just a helper

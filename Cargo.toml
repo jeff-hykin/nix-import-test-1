@@ -1,0 +1,25 @@
+[package]
+name = "salt"
+version = "0.2.3"
+authors = ["Milo123459"]
+edition = "2018"
+include = ["src/**/*", "LICENSE", "README.md"]
+license = "MIT"
+documentation = "https://github.com/Milo123459/salt"
+homepage = "https://github.com/Milo123459/salt"
+repository = "https://github.com/Milo123459/salt"
+description = "Task management for the CLI"
+
+[dependencies]
+serde_json = "1.0.70"
+serde = { version = "1.0.130", features = ["derive"] }
+structopt = "0.3.25"
+colored = "2.0.0"
+dirs-next = "2.0.0"
+anyhow = "1.0.45"
+
+[[bin]]
+name = "salt"
+
+[profile.release]
+lto = "fat"
