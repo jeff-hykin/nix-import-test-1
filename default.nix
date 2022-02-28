@@ -47,7 +47,7 @@ in
     }:
         (rustPlatform.buildRustPackage 
             ({
-                pname = "-";
+                pname = "salt";
                 version = "0";
 
                 src = fetchFromGitHub {
